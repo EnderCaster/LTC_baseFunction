@@ -52,14 +52,18 @@
             // 
             this.text_Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.text_Main.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.text_Main.Font = new System.Drawing.Font("华文行楷", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.text_Main.ForeColor = System.Drawing.Color.White;
             this.text_Main.Location = new System.Drawing.Point(0, 80);
             this.text_Main.Margin = new System.Windows.Forms.Padding(0);
             this.text_Main.Multiline = true;
             this.text_Main.Name = "text_Main";
+            this.text_Main.ReadOnly = true;
             this.text_Main.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.text_Main.Size = new System.Drawing.Size(300, 300);
             this.text_Main.TabIndex = 1;
             this.text_Main.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.text_Main.TextChanged += new System.EventHandler(this.text_Main_TextChanged);
             // 
             // capacity
             // 
@@ -71,6 +75,7 @@
             // 
             // submit
             // 
+            this.submit.Enabled = false;
             this.submit.Location = new System.Drawing.Point(151, 30);
             this.submit.Margin = new System.Windows.Forms.Padding(0);
             this.submit.Name = "submit";
@@ -78,10 +83,11 @@
             this.submit.TabIndex = 3;
             this.submit.Text = "确认";
             this.submit.UseVisualStyleBackColor = true;
+            this.submit.Visible = false;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // Edit
             // 
-            this.Edit.Enabled = false;
             this.Edit.Location = new System.Drawing.Point(0, 30);
             this.Edit.Margin = new System.Windows.Forms.Padding(0);
             this.Edit.Name = "Edit";
@@ -89,7 +95,7 @@
             this.Edit.TabIndex = 4;
             this.Edit.Text = "编辑";
             this.Edit.UseVisualStyleBackColor = true;
-            this.Edit.Visible = false;
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // TheOnlyOne
             // 
@@ -106,6 +112,9 @@
             this.Name = "TheOnlyOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "提醒";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.capacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
